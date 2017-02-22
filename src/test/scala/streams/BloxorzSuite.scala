@@ -1,10 +1,8 @@
 package streams
 
 import org.scalatest.FunSuite
-
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-
 import Bloxorz._
 
 @RunWith(classOf[JUnitRunner])
@@ -61,6 +59,12 @@ class BloxorzSuite extends FunSuite {
 	test("findChar level 1") {
     new Level1 {
       assert(startPos == Pos(1,1))
+    }
+  }
+
+  test("isStanding") {
+    new Level1 {
+      assert(true === Block(Pos(1, 1), Pos(1, 1)).isStanding)
     }
   }
 
