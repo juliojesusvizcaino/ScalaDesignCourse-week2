@@ -68,6 +68,15 @@ class BloxorzSuite extends FunSuite {
     }
   }
 
+  test("neighbors with history") {
+    new Level1 {
+      assert(Set(
+        (Block(Pos(1, 0), Pos(2, 0)), List(Down, Up)),
+        (Block(Pos(0, 1), Pos(0, 2)), List(Right, Up))) ===
+        neighborsWithHistory(Block(Pos(0, 0), Pos(0, 0)), List(Up)).toSet)
+    }
+  }
+
 
 	test("optimal solution for level 1") {
     new Level1 {
